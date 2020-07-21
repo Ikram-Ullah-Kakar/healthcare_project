@@ -20,8 +20,7 @@ def Dice3d(a, b):
     if a.shape != b.shape:
         raise Exception(f"Expecting inputs of the same shape, got {a.shape} and {b.shape}")
 
-    # TASK: Write implementation of Dice3D. If you completed exercises in the lessons
-    # you should already have it.
+ 
     
     intersection = 0
     for i in range(a.shape[0]):
@@ -54,8 +53,7 @@ def Jaccard3d(a, b):
     if a.shape != b.shape:
         raise Exception(f"Expecting inputs of the same shape, got {a.shape} and {b.shape}")
 
-    # TASK: Write implementation of Jaccard similarity coefficient. Please do not use 
-    # the Dice3D function from above to do the computation ;)
+   
     
     intersection = 0
     for i in range(a.shape[0]):

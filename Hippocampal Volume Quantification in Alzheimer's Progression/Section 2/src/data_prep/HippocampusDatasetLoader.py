@@ -36,7 +36,7 @@ def LoadHippocampusData(root_dir, y_shape, z_shape):
         label, _ = load(os.path.join(label_dir, f))
         print(f)
 
-        # TASK: normalize all images (but not labels) so that values are in [0..1] range
+       
         
         image = np.asarray(image).astype('float32')
         image = image / 255.0
@@ -48,11 +48,11 @@ def LoadHippocampusData(root_dir, y_shape, z_shape):
         # Note that since we feed individual slices to the CNN, we only need to 
         # extend 2 dimensions out of 3. We choose to extend coronal and sagittal here
 
-        # TASK: med_reshape function is not complete. Go and fix it!
+       
         image = med_reshape(image, new_shape=(image.shape[0], y_shape, z_shape))
         label = med_reshape(label, new_shape=(label.shape[0], y_shape, z_shape)).astype(int)
 
-        # TASK: Why do we need to cast label to int?
+        
         # ANSWER: Loss function need to be in integer to ccalculate loss, it gives error if not calculated on numeric.
 
         out.append({"image": image, "seg": label, "filename": f})
